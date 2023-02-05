@@ -2,7 +2,7 @@ package network
 
 type NetAddr string
 type RPC struct {
-	From    string
+	From    NetAddr
 	Payload []byte
 }
 type Transport interface {
@@ -10,4 +10,5 @@ type Transport interface {
 	Connect(Transport) error
 	SendMessage(NetAddr, []byte) error
 	Addr() NetAddr
+	// GetPeer(input NetAddr) NetAddr
 }
